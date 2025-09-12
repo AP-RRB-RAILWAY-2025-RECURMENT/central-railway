@@ -1,666 +1,133 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Apply Now — Central Railway Jobs Category B</title>
-  <meta name="description" content="Apply Now - Central Railway Jobs Category B. Fill form, pay ₹258.9 via UPI QR, confirm and get registration code." />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Central Railway Jobs - Apply</title>
   <style>
-    :root{
-      --bg:#071426;
-      --card: rgba(255,255,255,0.03);
-      --accent:#06b6d4;
-      --accent-2:#7c3aed;
-      --muted:#9fb0bf;
-      --txt:#eaf6fb;
-      --radius:14px;
-      --max-width:820px;
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f9ff url('https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Emblem_of_Andhra_Pradesh.svg/800px-Emblem_of_Andhra_Pradesh.svg.png') no-repeat center;
+      background-size: 300px;
+      background-attachment: fixed;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
     }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background: linear-gradient(180deg,#031025 0%, #071426 100%);
-      color:var(--txt);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:28px;
+    .container {
+      background: rgba(255,255,255,0.95);
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     }
-
-    /* background watermark using AP emblem (official) */
-    body::before{
-      content:"";
-      position:fixed;
-      left:50%;
-      top:42%;
-      transform:translate(-50%,-50%);
-      width:560px;
-      height:560px;
-      background-image: url('https://upload.wikimedia.org/wikipedia/commons/f/f4/Emblem_of_Andhra_Pradesh.png');
-      background-size:contain;
-      background-position:center;
-      background-repeat:no-repeat;
-      opacity:0.06;
-      filter:grayscale(1) contrast(.9);
-      pointer-events:none;
-      z-index:0;
+    h1, h2 {
+      color: #1b4e8c;
+      margin-bottom: 15px;
     }
-
-    .wrap{
-      width:100%;
-      max-width:var(--max-width);
-      z-index:2;
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+      text-align: left;
     }
-
-    .card{
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border-radius:var(--radius);
-      padding:20px;
-      box-shadow: 0 20px 50px rgba(2,6,23,0.7);
-      border:1px solid rgba(255,255,255,0.03);
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
     }
-
-    header{ text-align:center; margin-bottom:14px }
-    .top-logo{ display:flex; align-items:center; justify-content:center; gap:12px; margin-bottom:8px }
-    .top-logo img{ height:62px; width:auto; opacity:0.95; filter: drop-shadow(0 8px 20px rgba(2,6,23,0.6)); border-radius:8px; background:rgba(255,255,255,0.02); padding:6px }
-
-    h1{ margin:0; font-size:20px; letter-spacing:0.2px }
-    p.lead{ margin:6px 0 0; color:var(--muted); font-size:14px }
-
-    form{ margin-top:14px }
-    .grid{ display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
-    label{ display:block; font-size:13px; color:var(--muted); margin-bottom:6px }
-    input[type="text"], input[type="tel"], input[type="number"]{
-      width:100%; padding:10px 12px; border-radius:10px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:var(--txt);
-      outline:none; font-size:14px;
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      background: #1b4e8c;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
     }
-    input:focus{ box-shadow:0 6px 24px rgba(6,20,40,0.6); border-color: rgba(6,182,196,0.12) }
-
-    .full { grid-column: 1 / -1; }
-
-    .fee-row{
-      margin-top:12px; padding:12px; border-radius:10px; display:flex; justify-content:space-between; align-items:center;
-      background: linear-gradient(90deg, rgba(6,182,196,0.03), rgba(124,58,237,0.02)); border:1px solid rgba(255,255,255,0.02);
+    button:hover {
+      background: #163a66;
     }
-    .fee-row .amount{ font-weight:700; font-size:18px }
-
-    .actions{ margin-top:14px; display:flex; gap:10px; flex-wrap:wrap }
-    .btn{
-      padding:10px 14px; border-radius:10px; border:none; cursor:pointer; font-weight:700; color:#021028;
-      background: linear-gradient(90deg,var(--accent),var(--accent-2)); box-shadow:0 10px 30px rgba(2,6,23,0.6);
+    img {
+      max-width: 250px;
+      margin: 15px 0;
     }
-    .btn.ghost{ background:transparent; color:var(--muted); border:1px solid rgba(255,255,255,0.04) }
-
-    .note{ font-size:13px; color:var(--muted); margin-top:12px; }
-
-    /* result / code */
-    .result{
-      margin-top:14px; display:none; text-align:center; padding:12px; border-radius:10px; background: rgba(255,255,255,0.015); border:1px solid rgba(255,255,255,0.02);
+    .hidden {
+      display: none;
     }
-    .reg-code{ display:inline-block; margin-top:8px; padding:10px 14px; border-radius:8px; background:rgba(0,0,0,0.3); font-weight:800; letter-spacing:1px; font-size:16px; }
-
-    /* modal */
-    .modal-bg { position:fixed; inset:0; display:flex; align-items:center; justify-content:center; background: rgba(2,6,23,0.65); z-index:60; visibility:hidden; opacity:0; transition:opacity .16s; }
-    .modal-bg.open{ visibility:visible; opacity:1; }
-    .modal{
-      width:92%; max-width:420px; border-radius:12px; padding:16px; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border:1px solid rgba(255,255,255,0.03); text-align:center;
+    .result {
+      margin-top: 20px;
+      font-weight: bold;
+      color: green;
     }
-    .qr-img{ width:240px; height:240px; object-fit:contain; border-radius:10px; background:#fff; padding:10px; display:block; margin:10px auto 4px; box-shadow:0 12px 30px rgba(2,6,23,0.6) }
-
-    /* responsive */
-    @media (max-width:720px){
-      .grid{ grid-template-columns: 1fr; }
-      .top-logo img{ height:52px }
-      .qr-img{ width:200px; height:200px }
-    }
-
-    /* small helper */
-    .muted{ color:var(--muted) }
-    .small{ font-size:13px; color:var(--muted) }
   </style>
 </head>
 <body>
-  <main class="wrap">
-    <section class="card" role="region" aria-labelledby="mainTitle">
-      <div class="top-logo" aria-hidden="true">
-        <!-- top logo pulled from Wikimedia Commons (official AP emblem file) -->
-        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Emblem_of_Andhra_Pradesh.png" alt="Andhra Pradesh Emblem" />
-      </div>
-
-      <header>
-        <h1 id="mainTitle">Apply Now — <span style="color:var(--accent)">Central Railway</span> Jobs (Category B)</h1>
-        <p class="lead muted">Complete the form below and pay the application fee of <strong>₹258.9</strong> via the UPI QR.</p>
-      </header>
-
-      <form id="applyForm" autocomplete="off" novalidate>
-        <div class="grid">
-          <div>
-            <label for="fullname">Full name</label>
-            <input id="fullname" name="fullname" type="text" placeholder="Your full name" required />
-          </div>
-
-          <div>
-            <label for="aadhaar">Aadhaar number</label>
-            <input id="aadhaar" name="aadhaar" type="text" inputmode="numeric" pattern="\d{12}" maxlength="12" placeholder="123412341234" required />
-          </div>
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Apply Now — Central Railway Jobs Category B</title>
-  <meta name="description" content="Apply Now - Central Railway Jobs Category B. Fill form, pay ₹258.9 via UPI QR, confirm and get registration code." />
-
-  <style>
-    :root{
-      --bg:#071426;
-      --card: rgba(255,255,255,0.03);
-      --accent:#06b6d4;
-      --accent-2:#7c3aed;
-      --muted:#9fb0bf;
-      --txt:#eaf6fb;
-      --radius:14px;
-      --max-width:820px;
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{
-      margin:0;
-      font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background: linear-gradient(180deg,#031025 0%, #071426 100%);
-      color:var(--txt);
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:28px;
-    }
-
-    /* background watermark using AP emblem (official) */
-    body::before{
-      content:"";
-      position:fixed;
-      left:50%;
-      top:42%;
-      transform:translate(-50%,-50%);
-      width:560px;
-      height:560px;
-      background-image: url('https://upload.wikimedia.org/wikipedia/commons/f/f4/Emblem_of_Andhra_Pradesh.png');
-      background-size:contain;
-      background-position:center;
-      background-repeat:no-repeat;
-      opacity:0.06;
-      filter:grayscale(1) contrast(.9);
-      pointer-events:none;
-      z-index:0;
-    }
-
-    .wrap{
-      width:100%;
-      max-width:var(--max-width);
-      z-index:2;
-    }
-
-    .card{
-      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-      border-radius:var(--radius);
-      padding:20px;
-      box-shadow: 0 20px 50px rgba(2,6,23,0.7);
-      border:1px solid rgba(255,255,255,0.03);
-    }
-
-    header{ text-align:center; margin-bottom:14px }
-    .top-logo{ display:flex; align-items:center; justify-content:center; gap:12px; margin-bottom:8px }
-    .top-logo img{ height:62px; width:auto; opacity:0.95; filter: drop-shadow(0 8px 20px rgba(2,6,23,0.6)); border-radius:8px; background:rgba(255,255,255,0.02); padding:6px }
-
-    h1{ margin:0; font-size:20px; letter-spacing:0.2px }
-    p.lead{ margin:6px 0 0; color:var(--muted); font-size:14px }
-
-    form{ margin-top:14px }
-    .grid{ display:grid; grid-template-columns: 1fr 1fr; gap:12px; }
-    label{ display:block; font-size:13px; color:var(--muted); margin-bottom:6px }
-    input[type="text"], input[type="tel"], input[type="number"]{
-      width:100%; padding:10px 12px; border-radius:10px; border:1px solid rgba(255,255,255,0.04); background:transparent; color:var(--txt);
-      outline:none; font-size:14px;
-    }
-    input:focus{ box-shadow:0 6px 24px rgba(6,20,40,0.6); border-color: rgba(6,182,196,0.12) }
-
-    .full { grid-column: 1 / -1; }
-
-    .fee-row{
-      margin-top:12px; padding:12px; border-radius:10px; display:flex; justify-content:space-between; align-items:center;
-      background: linear-gradient(90deg, rgba(6,182,196,0.03), rgba(124,58,237,0.02)); border:1px solid rgba(255,255,255,0.02);
-    }
-    .fee-row .amount{ font-weight:700; font-size:18px }
-
-    .actions{ margin-top:14px; display:flex; gap:10px; flex-wrap:wrap }
-    .btn{
-      padding:10px 14px; border-radius:10px; border:none; cursor:pointer; font-weight:700; color:#021028;
-      background: linear-gradient(90deg,var(--accent),var(--accent-2)); box-shadow:0 10px 30px rgba(2,6,23,0.6);
-    }
-    .btn.ghost{ background:transparent; color:var(--muted); border:1px solid rgba(255,255,255,0.04) }
-
-    .note{ font-size:13px; color:var(--muted); margin-top:12px; }
-
-    /* result / code */
-    .result{
-      margin-top:14px; display:none; text-align:center; padding:12px; border-radius:10px; background: rgba(255,255,255,0.015); border:1px solid rgba(255,255,255,0.02);
-    }
-    .reg-code{ display:inline-block; margin-top:8px; padding:10px 14px; border-radius:8px; background:rgba(0,0,0,0.3); font-weight:800; letter-spacing:1px; font-size:16px; }
-
-    /* modal */
-    .modal-bg { position:fixed; inset:0; display:flex; align-items:center; justify-content:center; background: rgba(2,6,23,0.65); z-index:60; visibility:hidden; opacity:0; transition:opacity .16s; }
-    .modal-bg.open{ visibility:visible; opacity:1; }
-    .modal{
-      width:92%; max-width:420px; border-radius:12px; padding:16px; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border:1px solid rgba(255,255,255,0.03); text-align:center;
-    }
-    .qr-img{ width:240px; height:240px; object-fit:contain; border-radius:10px; background:#fff; padding:10px; display:block; margin:10px auto 4px; box-shadow:0 12px 30px rgba(2,6,23,0.6) }
-
-    /* responsive */
-    @media (max-width:720px){
-      .grid{ grid-template-columns: 1fr; }
-      .top-logo img{ height:52px }
-      .qr-img{ width:200px; height:200px }
-    }
-
-    /* small helper */
-    .muted{ color:var(--muted) }
-    .small{ font-size:13px; color:var(--muted) }
-  </style>
-</head>
-<body>
-  <main class="wrap">
-    <section class="card" role="region" aria-labelledby="mainTitle">
-      <div class="top-logo" aria-hidden="true">
-        <!-- top logo pulled from Wikimedia Commons (official AP emblem file) -->
-        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Emblem_of_Andhra_Pradesh.png" alt="Andhra Pradesh Emblem" />
-      </div>
-
-      <header>
-        <h1 id="mainTitle">Apply Now — <span style="color:var(--accent)">Central Railway</span> Jobs (Category B)</h1>
-        <p class="lead muted">Complete the form below and pay the application fee of <strong>₹258.9</strong> via the UPI QR.</p>
-      </header>
-
-      <form id="applyForm" autocomplete="off" novalidate>
-        <div class="grid">
-          <div>
-            <label for="fullname">Full name</label>
-            <input id="fullname" name="fullname" type="text" placeholder="Your full name" required />
-          </div>
-
-          <div>
-            <label for="aadhaar">Aadhaar number</label>
-            <input id="aadhaar" name="aadhaar" type="text" inputmode="numeric" pattern="\d{12}" maxlength="12" placeholder="123412341234" required />
-          </div>
-
-          <div>
-            <label for="mobile">Mobile number</label>
-            <input id="mobile" name="mobile" type="tel" inputmode="numeric" maxlength="10" pattern="\d{10}" placeholder="9876543210" required />
-          </div>
-
-          <div>
-            <label for="marks">10th Marks (%)</label>
-            <input id="marks" name="marks" type="number" min="0" max="100" step="0.01" placeholder="e.g., 78.5" required />
-          </div>
-
-          <div class="full">
-            <label for="hallticket">Hall Ticket number</label>
-            <input id="hallticket" name="hallticket" type="text" placeholder="Hall ticket / roll no" required />
-          </div>
-        </div>
-
-        <div class="fee-row" role="status" aria-live="polite">
-          <div>
-            <div class="small muted">Application fee</div>
-            <div class="amount">₹258.9</div>
-          </div>
-          <div class="small muted">UPI payment • Save your payment screenshot</div>
-        </div>
-
-        <div class="actions" aria-hidden="false">
-          <button type="button" id="proceedBtn" class="btn">Proceed to Payment</button>
-          <button type="button" id="resetBtn" class="btn ghost">Reset</button>
-        </div>
-
-        <div class="note">After clicking Proceed you'll see the UPI QR. Pay with your UPI app and then confirm to get your registration number.</div>
-
-        <div class="result" id="resultBox" aria-hidden="true">
-          <div class="small muted" id="resultText">Your registration number is:</div>
-          <div class="reg-code" id="regCode" aria-live="polite"></div>
-        </div>
+  <div class="container">
+    <!-- Step 1: Form -->
+    <div id="formStep">
+      <h1>Apply Now — Central Railway Jobs Category B</h1>
+      <form id="applicationForm">
+        <label>Full Name</label>
+        <input type="text" name="name" required>
+        <label>Aadhaar Number</label>
+        <input type="text" name="aadhaar" required>
+        <label>Mobile Number</label>
+        <input type="text" name="mobile" required>
+        <label>10th Marks</label>
+        <input type="text" name="marks" required>
+        <label>Hall Ticket Number</label>
+        <input type="text" name="hallticket" required>
+        <p><b>Application Fee:</b> ₹258.9</p>
+        <button type="submit">Proceed to Payment</button>
       </form>
-    </section>
-  </main>
+    </div>
 
-  <!-- Modal for QR -->
-  <div class="modal-bg" id="modal">
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <h3 id="modalTitle">Scan & Pay — ₹258.9</h3>
-      <p class="small muted">Open your UPI app and scan the QR below. After paying, click "I have paid" then "Confirm & Register" on the page.</p>
-
-      <!-- IMPORTANT: replace the src path with your qr file name 'qr.png' in the same repo -->
-      <img id="qrImage" class="qr-img" src="qr.png" alt="UPI QR code (replace qr.png with your QR image)" />
-
-      <div style="margin-top:8px; display:flex; gap:8px; justify-content:center; flex-wrap:wrap;">
-        <button class="btn" id="paidBtn">I have paid</button>
-        <button class="btn ghost" id="closeModal">Close</button>
-      </div>
-
-      <p class="small muted" style="margin-top:10px;">Make sure to keep a screenshot of your payment for records.</p>
+    <!-- Step 2: Payment -->
+    <div id="paymentStep" class="hidden">
+      <h2>Payment</h2>
+      <p>Application Fee: ₹258.9</p>
+      <p>Scan the QR code below to pay:</p>
+      <img src="qr.png" alt="Payment QR Code">
+      <button onclick="confirmPayment()">Confirm & Register</button>
+      <div class="result" id="result"></div>
     </div>
   </div>
 
   <script>
-    // Elements
-    const form = document.getElementById('applyForm');
-    const proceedBtn = document.getElementById('proceedBtn');
-    const resetBtn = document.getElementById('resetBtn');
-    const modal = document.getElementById('modal');
-    const closeModal = document.getElementById('closeModal');
-    const paidBtn = document.getElementById('paidBtn');
-    const resultBox = document.getElementById('resultBox');
-    const regCodeEl = document.getElementById('regCode');
-    const resultText = document.getElementById('resultText');
+    const formStep = document.getElementById('formStep');
+    const paymentStep = document.getElementById('paymentStep');
+    const resultDiv = document.getElementById('result');
 
-    let paymentDone = false;
-    let currentReg = '';
-
-    // validation helpers
-    function onlyDigits(v){ return /^\d+$/.test(v) }
-    function validForm(){
-      const f = form;
-      if(!f.fullname.value.trim()) return false;
-      const aad = f.aadhaar.value.trim();
-      if(!onlyDigits(aad) || aad.length !== 12) return false;
-      const mob = f.mobile.value.trim();
-      if(!onlyDigits(mob) || mob.length !== 10) return false;
-      const marks = parseFloat(f.marks.value);
-      if(isNaN(marks) || marks < 0 || marks > 100) return false;
-      if(!f.hallticket.value.trim()) return false;
-      return true;
-    }
-
-    // open QR modal
-    proceedBtn.addEventListener('click', () => {
-      if(!validForm()){
-        alert('Please fill all fields correctly. Aadhaar must be 12 digits and mobile must be 10 digits.');
-        return;
-      }
-      // reset previous registration if any
-      paymentDone = false;
-      currentReg = '';
-      regCodeEl.textContent = '';
-      resultBox.style.display = 'none';
-
-      modal.classList.add('open');
+    // Step 1 → Step 2
+    document.getElementById('applicationForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      formStep.classList.add('hidden');
+      paymentStep.classList.remove('hidden');
     });
 
-    closeModal.addEventListener('click', ()=> modal.classList.remove('open'));
-
-    // when user confirms they paid
-    paidBtn.addEventListener('click', () => {
-      // In real system, you'd verify server-side.
-      paymentDone = true;
-      modal.classList.remove('open');
-      showConfirmButton();
-      alert('Payment noted. Now click "Confirm & Register" to generate your registration number.');
-    });
-
-    // add Confirm & Register button after Proceed
-    function showConfirmButton(){
-      if(document.getElementById('confirmBtn')) return;
-      const confirmBtn = document.createElement('button');
-      confirmBtn.type = 'button';
-      confirmBtn.id = 'confirmBtn';
-      confirmBtn.className = 'btn';
-      confirmBtn.textContent = 'Confirm & Register';
-      // place after proceed button
-      proceedBtn.insertAdjacentElement('afterend', confirmBtn);
-      confirmBtn.addEventListener('click', onConfirm);
-      confirmBtn.focus();
-    }
-
-    function onConfirm(){
-      if(!paymentDone){
-        alert('Please complete payment first by scanning the QR and clicking "I have paid".');
-        return;
+    // Generate random registration number
+    function generateCode(length) {
+      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+      let code = '';
+      for (let i = 0; i < length; i++) {
+        code += chars.charAt(Math.floor(Math.random() * chars.length));
       }
-      if(!validForm()){
-        alert('Form is invalid or changed. Please recheck fields.');
-        return;
-      }
-      currentReg = generateCode(6);
-      regCodeEl.textContent = currentReg;
-      resultText.textContent = 'Your registration number is:';
-      resultBox.style.display = 'block';
-      resultBox.setAttribute('aria-hidden', 'false');
-
-      // lock form to avoid double registration
-      lockForm();
-
-      // save masked record locally (optional)
-      saveLocal();
+      return code;
     }
 
-    function generateCode(len){
-      const chars = 'abcdefghijklmnopqrstuvwxyz0123456789';
-      let s = '';
-      for(let i=0;i<len;i++) s += chars[Math.floor(Math.random()*chars.length)];
-      return s;
+    // Confirm payment → Show registration number
+    function confirmPayment(){
+      const reg = generateCode(6);
+      resultDiv.innerText = "Your registration number is: " + reg;
     }
-
-    function lockForm(){
-      // disable inputs & proceed button
-      [...form.querySelectorAll('input, button')].forEach(el=>{
-        // keep copy/reset buttons enabled
-        if(el.id === 'resetBtn') el.disabled = false;
-        else el.disabled = true;
-      });
-      // the confirm button remains enabled (user may click copy etc.)
-      const conf = document.getElementById('confirmBtn');
-      if(conf) conf.disabled = false;
-    }
-
-    // Reset behavior
-    resetBtn.addEventListener('click', ()=>{
-      if(!confirm('Reset the form?')) return;
-      form.reset();
-      paymentDone = false;
-      currentReg = '';
-      regCodeEl.textContent = '';
-      resultBox.style.display = 'none';
-      const conf = document.getElementById('confirmBtn');
-      if(conf) conf.remove();
-      // re-enable inputs
-      [...form.querySelectorAll('input, button')].forEach(el => el.disabled = false);
-    });
-
-    // Save a masked copy to localStorage for demo (not secure, masked)
-    function saveLocal(){
-      try{
-        const f = form;
-        const record = {
-          fullname: f.fullname.value.trim(),
-          aadhaar: f.aadhaar.value.trim().slice(-4).padStart(12,'*'),
-          mobile: f.mobile.value.trim().slice(-4).padStart(10,'*'),
-          marks: f.marks.value.trim(),
-          hallticket: f.hallticket.value.trim(),
-          reg: currentReg,
-          ts: new Date().toISOString()
-        };
-        const arr = JSON.parse(localStorage.getItem('rail_ap_regs') || '[]');
-        arr.push(record);
-        localStorage.setItem('rail_ap_regs', JSON.stringify(arr));
-      }catch(e){
-        // ignore localStorage errors
-      }
-    }
-
-    // accessibility: close modal on Escape
-    document.addEventListener('keydown', (e)=> {
-      if(e.key === 'Escape') modal.classList.remove('open');
-    });
-
-    // if you want to dynamically replace the QR image at runtime:
-    // document.getElementById('qrImage').src = 'qr.png'; // default already points to qr.png
-
   </script>
-
-  <!--
-    Emblem used from Wikimedia Commons: Emblem of Andhra Pradesh (official upload).
-    Source: Wikimedia Commons (Government of Andhra Pradesh upload). See:
-    https://commons.wikimedia.org/wiki/File:Emblem_of_Andhra_Pradesh.png
-    (The emblem is available on Wikimedia Commons and originates from gad.ap.gov.in).
-  -->
-
 </body>
 </html>￼Enter
-          <div>
-            <label for="mobile">Mobile number</label>
-            <input id="mobile" name="mobile" type="tel" inputmode="numeric" maxlength="10" pattern="\d{10}" placeholder="9876543210" required />
-          </div>
-
-          <div>
-            <label for="marks">10th Marks (%)</label>
-            <input id="marks" name="marks" type="number" min="0" max="100" step="0.01" placeholder="e.g., 78.5" required />
-          </div>
-
-          <div class="full">
-            <label for="hallticket">Hall Ticket number</label>
-            <input id="hallticket" name="hallticket" type="text" placeholder="Hall ticket / roll no" required />
-          </div>
-        </div>
-
-        <div class="fee-row" role="status" aria-live="polite">
-          <div>
-            <div class="small muted">Application fee</div>
-            <div class="amount">₹258.9</div>
-          </div>
-          <div class="small muted">UPI payment • Save your payment screenshot</div>
-        </div>
-
-        <div class="actions" aria-hidden="false">
-          <button type="button" id="proceedBtn" class="btn">Proceed to Payment</button>
-          <button type="button" id="resetBtn" class="btn ghost">Reset</button>
-        </div>
-
-        <div class="note">After clicking Proceed you'll see the UPI QR. Pay with your UPI app and then confirm to get your registration number.</div>
-
-        <div class="result" id="resultBox" aria-hidden="true">
-          <div class="small muted" id="resultText">Your registration number is:</div>
-          <div class="reg-code" id="regCode" aria-live="polite"></div>
-        </div>
-      </form>
-    </section>
-  </main>
-
-  <!-- Modal for QR -->
-  <div class="modal-bg" id="modal">
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <h3 id="modalTitle">Scan & Pay — ₹258.9</h3>
-      <p class="small muted">Open your UPI app and scan the QR below. After paying, click "I have paid" then "Confirm & Register" on the page.</p>
-
-      <!-- IMPORTANT: replace the src path with your qr file name 'qr.png' in the same repo -->
-      <img id="qrImage" class="qr-img" src="qr.png" alt="UPI QR code (replace qr.png with your QR image)" />
-
-      <div style="margin-top:8px; display:flex; gap:8px; justify-content:center; flex-wrap:wrap;">
-        <button class="btn" id="paidBtn">I have paid</button>
-        <button class="btn ghost" id="closeModal">Close</button>
-      </div>
-
-      <p class="small muted" style="margin-top:10px;">Make sure to keep a screenshot of your payment for records.</p>
-    </div>
-  </div>
-
-  <script>
-    // Elements
-    const form = document.getElementById('applyForm');
-    const proceedBtn = document.getElementById('proceedBtn');
-    const resetBtn = document.getElementById('resetBtn');
-    const modal = document.getElementById('modal');
-    const closeModal = document.getElementById('closeModal');
-    const paidBtn = document.getElementById('paidBtn');
-    const resultBox = document.getElementById('resultBox');
-    const regCodeEl = document.getElementById('regCode');
-    const resultText = document.getElementById('resultText');
-
-    let paymentDone = false;
-    let currentReg = '';
-
-    // validation helpers
-nction onlyDigits(v){ return /^\d+$/.test(v) }
-    function validForm(){
-      const f = form;
-      if(!f.fullname.value.trim()) return false;
-      const aad = f.aadhaar.value.trim();
-      if(!onlyDigits(aad) || aad.length !== 12) return false;
-      const mob = f.mobile.value.trim();
-      if(!onlyDigits(mob) || mob.length !== 10) return false;
-      const marks = parseFloat(f.marks.value);
-      if(isNaN(marks) || marks < 0 || marks > 100) return false;
-      if(!f.hallticket.value.trim()) return false;
-      return true;
-    }
-
-    // open QR modal
-    proceedBtn.addEventListener('click', () => {
-      if(!validForm()){
-        alert('Please fill all fields correctly. Aadhaar must be 12 digits and mobile must be 10 digits.');
-        return;
-      }
-      // reset previous registration if any
-      paymentDone = false;
-      currentReg = '';
-      regCodeEl.textContent = '';
-      resultBox.style.display = 'none';
-
-      modal.classList.add('open');
-    });
-
-    closeModal.addEventListener('click', ()=> modal.classList.remove('open'));
-
-    // when user confirms they paid
-    paidBtn.addEventListener('click', () => {
-      // In real system, you'd verify server-side.
-      paymentDone = true;
-      modal.classList.remove('open');
-      showConfirmButton();
-      alert('Payment noted. Now click "Confirm & Register" to generate your registration number.');
-    });
-
-    // add Confirm & Register button after Proceed
-    function showConfirmButton(){
-      if(document.getElementById('confirmBtn')) return;
-      const confirmBtn = document.createElement('button');
-      confirmBtn.type = 'button';
-      confirmBtn.id = 'confirmBtn';
-      confirmBtn.className = 'btn';
-      confirmBtn.textContent = 'Confirm & Register';
-      // place after proceed button
-      proceedBtn.insertAdjacentElement('afterend', confirmBtn);
-      confirmBtn.addEventListener('click', onConfirm);
-      confirmBtn.focus();
-    }
-
-    function onConfirm(){
-      if(!paymentDone){
-        alert('Please complete payment first by scanning the QR and clicking "I have paid".');
-        return;
-      }
-      if(!validForm()){
-        alert('Form is invalid or changed. Please recheck fields.');
-        return;
-      }
-      currentReg = generateCode(6);
-      regCodeEl.textContent = currentReg;
-      resultText.textContent = 'Your registration number is:';
-      resultBox.style.display = 'block';
-      resultBox.setAttribute('aria-hidden', 'false');
-
-      // lock form to avoid double registration
-      lockForm();
-
-      // save masked record locally (optional)
-      saveLocal();
